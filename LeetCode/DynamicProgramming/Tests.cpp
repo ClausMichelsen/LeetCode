@@ -46,6 +46,60 @@ TEST(DynamicProgramming, CombinationSumIV)
     EXPECT_EQ(0, count1);
 };
 
+TEST(DynamicProgramming, DecodeWays_Recursive)
+{
+    int count0 = DecodeWays_Recursive("12");
+    EXPECT_EQ(2, count0);
+
+    int count1 = DecodeWays_Recursive("226");
+    EXPECT_EQ(3, count1);
+
+    int count2 = DecodeWays_Recursive("0");
+    EXPECT_EQ(0, count2);
+
+    int count3 = DecodeWays_Recursive("06");
+    EXPECT_EQ(0, count3);
+
+    int count4 = DecodeWays_Recursive("1111");
+    EXPECT_EQ(5, count4);
+
+    int count5 = DecodeWays_Recursive("1");
+    EXPECT_EQ(1, count5);
+
+    int count6 = DecodeWays_Recursive("10");
+    EXPECT_EQ(1, count6);
+
+    int count7 = DecodeWays_Recursive("27");
+    EXPECT_EQ(1, count7);
+};
+
+TEST(DynamicProgramming, DecodeWays_Tabulation)
+{
+    int count0 = DecodeWays_Tabulation("12");
+    EXPECT_EQ(2, count0);
+
+    int count1 = DecodeWays_Tabulation("226");
+    EXPECT_EQ(3, count1);
+
+    int count2 = DecodeWays_Tabulation("0");
+    EXPECT_EQ(0, count2);
+
+    int count3 = DecodeWays_Tabulation("06");
+    EXPECT_EQ(0, count3);
+
+    int count4 = DecodeWays_Tabulation("1111");
+    EXPECT_EQ(5, count4);
+
+    int count5 = DecodeWays_Tabulation("1");
+    EXPECT_EQ(1, count5);
+
+    int count6 = DecodeWays_Tabulation("10");
+    EXPECT_EQ(1, count6);
+
+    int count7 = DecodeWays_Tabulation("27");
+    EXPECT_EQ(1, count7);
+};
+
 TEST(DynamicProgramming, HouseRobber_Iterative1)
 {
     int money0 = HouseRobber_Iterative1({ 1,2,3,1 });
@@ -94,6 +148,27 @@ TEST(DynamicProgramming, HouseRobberII)
     EXPECT_EQ(3, money2);
 };
 
+TEST(DynamicProgramming, JumpGame)
+{
+    bool can0 = JumpGame({ 2,3,1,1,4 });
+    EXPECT_EQ(true, can0);
+
+    bool can1 = JumpGame({ 3,2,1,0,4 });
+    EXPECT_EQ(false, can1);
+
+    bool can2 = JumpGame({ 0 });
+    EXPECT_EQ(true, can2);
+
+    bool can3 = JumpGame({ 2,0,0 });
+    EXPECT_EQ(true, can3);
+
+    bool can4 = JumpGame({ 3,2,1,0,4 });
+    EXPECT_EQ(false, can4);
+
+    bool can5 = JumpGame({ 1 });
+    EXPECT_EQ(true, can5);
+};
+
 TEST(DynamicProgramming, LongestCommonSubsequence)
 {
     int len0 = LongestCommonSubsequence("abcde", "ace");
@@ -116,6 +191,21 @@ TEST(DynamicProgramming, LongestIncreasingSubsequence)
 
     int len2 = LongestIncreasingSubsequence({ 7,7,7,7,7,7,7 });
     EXPECT_EQ(1, len2);
+};
+
+TEST(DynamicProgramming, UniquePaths)
+{
+    int paths0 = UniquePaths(3, 7);
+    EXPECT_EQ(28, paths0);
+
+    int paths1 = UniquePaths(3, 2);
+    EXPECT_EQ(3, paths1);
+
+    int paths2 = UniquePaths(7, 3);
+    EXPECT_EQ(28, paths2);
+
+    int paths3 = UniquePaths(3, 3);
+    EXPECT_EQ(6, paths3);
 };
 
 TEST(DynamicProgramming, WordBreak_1)
