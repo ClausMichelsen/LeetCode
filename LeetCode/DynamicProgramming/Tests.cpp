@@ -100,6 +100,15 @@ TEST(DynamicProgramming, DecodeWays_Tabulation)
     EXPECT_EQ(1, count7);
 };
 
+TEST(DynamicProgramming, DeleteOperationForTwoStrings)
+{
+    int steps0 = DeleteOperationForTwoStrings("sea", "eat");
+    EXPECT_EQ(2, steps0);
+
+    int steps1 = DeleteOperationForTwoStrings("leetcode", "etco");
+    EXPECT_EQ(4, steps1);
+};
+
 TEST(DynamicProgramming, HouseRobber_Iterative1)
 {
     int money0 = HouseRobber_Iterative1({ 1,2,3,1 });
@@ -191,6 +200,15 @@ TEST(DynamicProgramming, LongestIncreasingSubsequence)
 
     int len2 = LongestIncreasingSubsequence({ 7,7,7,7,7,7,7 });
     EXPECT_EQ(1, len2);
+};
+
+TEST(DynamicProgramming, NumberOfLongestIncreasingSubsequence)
+{
+    int count0 = NumberOfLongestIncreasingSubsequence({ 1,3,5,4,7 });
+    EXPECT_EQ(2, count0);
+
+    int count1 = NumberOfLongestIncreasingSubsequence({ 2,2,2,2,2 });
+    EXPECT_EQ(5, count1);
 };
 
 TEST(DynamicProgramming, UniquePaths)

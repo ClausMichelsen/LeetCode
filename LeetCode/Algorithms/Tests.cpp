@@ -22,6 +22,30 @@ TEST(Algorithms, BinarySearch)
     EXPECT_EQ(-1, result1);
 };
 
+TEST(Algorithms, BitwiseAndOfNumbersRange_Iterative)
+{
+    int result0 = BitwiseAndOfNumbersRange_Iterative(5, 7);
+    EXPECT_EQ(4, result0);
+
+    int result1 = BitwiseAndOfNumbersRange_Iterative(0, 0);
+    EXPECT_EQ(0, result1);
+
+    int result2 = BitwiseAndOfNumbersRange_Iterative(1, 2147483647);
+    EXPECT_EQ(0, result2);
+};
+
+TEST(Algorithms, BitwiseAndOfNumbersRange_Recursive)
+{
+    int result0 = BitwiseAndOfNumbersRange_Recursive(5, 7);
+    EXPECT_EQ(4, result0);
+
+    int result1 = BitwiseAndOfNumbersRange_Recursive(0, 0);
+    EXPECT_EQ(0, result1);
+
+    int result2 = BitwiseAndOfNumbersRange_Recursive(1, 2147483647);
+    EXPECT_EQ(0, result2);
+};
+
 TEST(Algorithms, ContainerWithMostWater)
 {
     const int water0 = ContainerWithMostWater({ 1,8,6,2,5,4,8,3,7 });
@@ -73,6 +97,15 @@ TEST(Algorithms, FindMinimumInRotatedSortedArray)
 
     int min6 = FindMinimumInRotatedSortedArray({ 3,1,2 });
     EXPECT_EQ(1, min6);
+};
+
+TEST(Algorithms, HappyNumber)
+{
+    const bool happy0 = HappyNumber(19);
+    EXPECT_EQ(true, happy0);
+
+    const bool happy1 = HappyNumber(2);
+    EXPECT_EQ(false, happy1);
 };
 
 TEST(Algorithms, MaximumProductSubarray)

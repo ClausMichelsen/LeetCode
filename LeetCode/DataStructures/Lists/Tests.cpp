@@ -5,45 +5,45 @@
 
 
 
-TEST(DataStructures_Lists, LinkedListCycle_1)
+TEST(DataStructures_Lists, LinkedListCycle_Floyd)
 {
     ListNode ln0_3{ -4, nullptr };
     ListNode ln0_2{ 0, &ln0_3 };
     ListNode ln0_1{ 2, &ln0_2 };
     ListNode ln0_0{ 3, &ln0_1 };
     ln0_3.next = &ln0_0;
-    bool cycle0 = LinkedListCycle_1(&ln0_0);
+    bool cycle0 = LinkedListCycle_Floyd(&ln0_0);
     EXPECT_EQ(true, cycle0);
 
     ListNode ln1_1{ 2, nullptr };
     ListNode ln1_0{ 1, &ln1_1 };
     ln1_1.next = &ln1_0;
-    bool cycle1 = LinkedListCycle_1(&ln1_0);
+    bool cycle1 = LinkedListCycle_Floyd(&ln1_0);
     EXPECT_EQ(true, cycle1);
 
     ListNode ln2_0{ 1, nullptr };
-    bool cycle2 = LinkedListCycle_1(&ln2_0);
+    bool cycle2 = LinkedListCycle_Floyd(&ln2_0);
     EXPECT_EQ(false, cycle2);
 };
 
-TEST(DataStructures_Lists, LinkedListCycle_2)
+TEST(DataStructures_Lists, LinkedListCycle_Regular)
 {
     ListNode ln0_3{ -4, nullptr };
     ListNode ln0_2{ 0, &ln0_3 };
     ListNode ln0_1{ 2, &ln0_2 };
     ListNode ln0_0{ 3, &ln0_1 };
     ln0_3.next = &ln0_0;
-    bool cycle0 = LinkedListCycle_2(&ln0_0);
+    bool cycle0 = LinkedListCycle_Regular(&ln0_0);
     EXPECT_EQ(true, cycle0);
 
     ListNode ln1_1{ 2, nullptr };
     ListNode ln1_0{ 1, &ln1_1 };
     ln1_1.next = &ln1_0;
-    bool cycle1 = LinkedListCycle_2(&ln1_0);
+    bool cycle1 = LinkedListCycle_Regular(&ln1_0);
     EXPECT_EQ(true, cycle1);
 
     ListNode ln2_0{ 1, nullptr };
-    bool cycle2 = LinkedListCycle_2(&ln2_0);
+    bool cycle2 = LinkedListCycle_Regular(&ln2_0);
     EXPECT_EQ(false, cycle2);
 };
 

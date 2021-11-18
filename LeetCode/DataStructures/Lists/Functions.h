@@ -9,8 +9,8 @@ using namespace std;
 
 
 
-bool LinkedListCycle_1(ListNode* head);
-bool LinkedListCycle_2(ListNode* head);
+bool LinkedListCycle_Floyd(ListNode* head);
+bool LinkedListCycle_Regular(ListNode* head);
 ListNode* MergeKSortedLists(vector<ListNode*> lists);
 ListNode* MergeTwoSortedLists(ListNode* l1, ListNode* l2);
 ListNode* RemoveNthNodeFromEndOfList(ListNode* head, int n);
