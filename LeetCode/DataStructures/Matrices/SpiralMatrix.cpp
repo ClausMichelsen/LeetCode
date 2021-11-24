@@ -5,7 +5,7 @@ using namespace std;
 
 
 // Problem: https://leetcode.com/problems/spiral-matrix/
-vector<int> SpiralOrder(vector<vector<int>> matrix)
+vector<int> SpiralMatrix(vector<vector<int>> matrix)
 {
     vector<int> result;
 

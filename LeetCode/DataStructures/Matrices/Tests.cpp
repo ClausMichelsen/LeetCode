@@ -37,9 +37,9 @@ TEST(DataStructures_Matrix, SetMatrixZeroes)
     EXPECT_EQ(0, zeroMatrix1[2][3]);
 };
 
-TEST(DataStructures_Matrix, SpiralOrder)
+TEST(DataStructures_Matrix, SpiralMatrix)
 {
-    vector<int> spiral0 = SpiralOrder({ {1,2,3}, {4,5,6}, {7,8,9} });
+    vector<int> spiral0 = SpiralMatrix({ {1,2,3}, {4,5,6}, {7,8,9} });
     EXPECT_EQ(1, spiral0[0]);
     EXPECT_EQ(2, spiral0[1]);
     EXPECT_EQ(3, spiral0[2]);
@@ -50,7 +50,7 @@ TEST(DataStructures_Matrix, SpiralOrder)
     EXPECT_EQ(4, spiral0[7]);
     EXPECT_EQ(5, spiral0[8]);
 
-    vector<int> spiral1 = SpiralOrder({ {1,2,3,4}, {5,6,7,8}, {9,10,11,12} });
+    vector<int> spiral1 = SpiralMatrix({ {1,2,3,4}, {5,6,7,8}, {9,10,11,12} });
     EXPECT_EQ(1, spiral1[0]);
     EXPECT_EQ(2, spiral1[1]);
     EXPECT_EQ(3, spiral1[2]);
@@ -63,6 +63,23 @@ TEST(DataStructures_Matrix, SpiralOrder)
     EXPECT_EQ(5, spiral1[9]);
     EXPECT_EQ(6, spiral1[10]);
     EXPECT_EQ(7, spiral1[11]);
+};
+
+TEST(DataStructures_Matrix, SpiralMatrixII)
+{
+    vector<vector<int>> spiral0 = SpiralMatrixII(3);
+    EXPECT_EQ(1, spiral0[0][0]);
+    EXPECT_EQ(2, spiral0[0][1]);
+    EXPECT_EQ(3, spiral0[0][2]);
+    EXPECT_EQ(8, spiral0[1][0]);
+    EXPECT_EQ(9, spiral0[1][1]);
+    EXPECT_EQ(4, spiral0[1][2]);
+    EXPECT_EQ(7, spiral0[2][0]);
+    EXPECT_EQ(6, spiral0[2][1]);
+    EXPECT_EQ(5, spiral0[2][2]);
+
+    vector<vector<int>> spiral1 = SpiralMatrixII(1);
+    EXPECT_EQ(1, spiral1[0][0]);
 };
 
 TEST(DataStructures_Matrix, WordSearch)

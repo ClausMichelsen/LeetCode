@@ -108,6 +108,15 @@ TEST(Algorithms, HappyNumber)
     EXPECT_EQ(false, happy1);
 };
 
+TEST(Algorithms, MajorityElement)
+{
+    const int element0 = MajorityElement({ 3, 2, 3 });
+    EXPECT_EQ(3, element0);
+
+    const int element1 = MajorityElement({ 2, 2, 1, 1, 1, 2, 2 });
+    EXPECT_EQ(2, element1);
+};
+
 TEST(Algorithms, MaximumProductSubarray)
 {
     const int spa0 = MaximumProductSubarray({ 2, 3, -2, 4 });
@@ -132,16 +141,51 @@ TEST(Algorithms, MaxSubarray)
     EXPECT_EQ(-1, sa3);
 };
 
-TEST(Algorithms, ThreeSum)
+TEST(Algorithms, SingleNumber)
 {
-    vector<vector<int>> result0 = ThreeSum({ -1,0,1,2,-1,-4 });
-    EXPECT_EQ(2, result0.size());
+    const int result0 = SingleNumber({ 2, 2, 1 });
+    EXPECT_EQ(1, result0);
 
-    vector<vector<int>> result1 = ThreeSum({});
-    EXPECT_EQ(0, result1.size());
+    const int result1 = SingleNumber({ 4, 1, 2, 1, 2 });
+    EXPECT_EQ(4, result1);
 
-    vector<vector<int>> result2 = ThreeSum({ 0 });
-    EXPECT_EQ(0, result2.size());
+    const int result2 = SingleNumber({ 1 });
+    EXPECT_EQ(1, result2);
+};
+
+TEST(Algorithms, SortColors)
+{
+    vector<int> colors0{ 2, 0, 2, 1, 1, 0 };
+    SortColors(colors0);
+    EXPECT_EQ(6, colors0.size());
+    EXPECT_EQ(0, colors0[0]);
+    EXPECT_EQ(0, colors0[1]);
+    EXPECT_EQ(1, colors0[2]);
+    EXPECT_EQ(1, colors0[3]);
+    EXPECT_EQ(2, colors0[4]);
+    EXPECT_EQ(2, colors0[5]);
+
+    vector<int> colors1{ 2, 0, 1 };
+    SortColors(colors1);
+    EXPECT_EQ(3, colors1.size());
+    EXPECT_EQ(0, colors1[0]);
+    EXPECT_EQ(1, colors1[1]);
+    EXPECT_EQ(2, colors1[2]);
+
+    vector<int> colors2{ 0 };
+    SortColors(colors2);
+    EXPECT_EQ(1, colors2.size());
+    EXPECT_EQ(0, colors2[0]);
+
+    vector<int> colors3{ 1 };
+    SortColors(colors3);
+    EXPECT_EQ(1, colors3.size());
+    EXPECT_EQ(1, colors3[0]);
+
+    vector<int> colors4{ 1,2,2,2,2,0,0,0,1,1 };
+    SortColors(colors4);
+    EXPECT_EQ(0, colors4[0]);
+    EXPECT_EQ(2, colors4[9]);
 };
 
 TEST(Algorithms, TwoSum)
@@ -161,4 +205,16 @@ TEST(Algorithms, TwoSum)
     EXPECT_EQ(0, indicies2[0]);
     EXPECT_EQ(1, indicies2[1]);
 
+};
+
+TEST(Algorithms, ThreeSum)
+{
+    vector<vector<int>> result0 = ThreeSum({ -1,0,1,2,-1,-4 });
+    EXPECT_EQ(2, result0.size());
+
+    vector<vector<int>> result1 = ThreeSum({});
+    EXPECT_EQ(0, result1.size());
+
+    vector<vector<int>> result2 = ThreeSum({ 0 });
+    EXPECT_EQ(0, result2.size());
 };
