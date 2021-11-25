@@ -24,6 +24,15 @@ TEST(DataStructures_Matrix, RotateImage)
     EXPECT_EQ(1, matrix2[0][0]);
 };
 
+TEST(DataStructures_Matrix, Search2dMatrixII)
+{
+    const bool result0 = Search2dMatrixII({ {1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30} }, 5);
+    EXPECT_EQ(true, result0);
+
+    const bool result1 = Search2dMatrixII({ {1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30} }, 20);
+    EXPECT_EQ(false , result1);
+};
+
 TEST(DataStructures_Matrix, SetMatrixZeroes)
 {
     vector<vector<int>> zeroMatrix0{ {1, 1, 1}, {1, 0, 1}, {1, 1, 1} };
